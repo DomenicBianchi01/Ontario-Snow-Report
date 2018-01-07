@@ -39,7 +39,7 @@ extension TodayGlenEdenViewModel: DescriptionViewModelable {
             return """
             \(openTrailCount) of \(totalTrailCount) trails open
             \(openTerrainParkCount) of \(totalTerrainParkCount) terrain parks open
-            New Snow: \(try glenEdenDetails?.get(0).getElementsByTag("td").get(2).text() ?? "-") cm
+            New Snow: \(try glenEdenDetails?.get(0).getElementsByTag("td").get(2).text() ?? "-")
             """
         } catch {
             return "Unable to fetch data"
