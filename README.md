@@ -1,5 +1,9 @@
 # Ontario-Snow-Report
 
-An iOS that parses websites of ski resorts in Ontario and displays details about what terrain is open all within one app.
+An iOS app that parses websites of ski resorts in Ontario and displays details about what terrain is open all within one app.
 
-For Mt. St. Louis and Horseshoe Valley, the app uses the `SwiftSoup` pod to assist in parsing the HTML from their websites. 
+For Mt. St. Louis, Horseshoe Valley, and Glen Eden, the app uses the `SwiftSoup` pod to assist in parsing the HTML from their websites. 
+
+There is also a Today Extension and Apple Watch app that display condensed reports for each ski hill.
+
+Note: I have removed my Google API key from the App Delegate. You will need to provide your own key for the trail maps to load properly.
