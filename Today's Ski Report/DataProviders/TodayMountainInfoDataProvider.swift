@@ -64,7 +64,7 @@ extension TodayMountainInfoDataProvider: MountainInfoDataProvidable {
                 mtSaintLouisDetails = try mtSaintLouisFullReport?.getElementsByClass("availability_list table")
                 
                 // The app currently does not use data for night operastions
-                if let newDetails = mtSaintLouisDetails?.dropLast(3) {
+                if let newDetails = mtSaintLouisDetails?.dropLast(2) {
                     mtSaintLouisDetails = Elements(Array(newDetails))
                 }
             } else {

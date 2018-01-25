@@ -9,6 +9,7 @@
 import UIKit
 
 final class AppInfoViewController: UIViewController {
+    // MARK: - Lifecycle Functions
     override func viewDidLoad() {
         super.viewDidLoad()
     }

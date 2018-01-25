@@ -36,7 +36,7 @@ extension MountStLouisDataProvider: MountainInfoDataProvidable {
                 mountainDetails = try parsedReport?.getElementsByClass("availability_list table")
 
                 // The app currently does not use data for night operastions
-                if let newDetails = mountainDetails?.dropLast(3) {
+                if let newDetails = mountainDetails?.dropLast(2) {
                     mountainDetails = Elements(Array(newDetails))
                 }
             } else {
