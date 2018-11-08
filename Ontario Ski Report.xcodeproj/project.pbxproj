@@ -265,6 +265,7 @@
 		B0A7D75F1FF5D94A00615A9C /* TodayMountainSummaryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayMountainSummaryTableViewCell.swift; sourceTree = "<group>"; };
 		B0AC6B121FC5189800678FB7 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B0BB416F1F6B7718007CAF40 /* RunStatusTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = RunStatusTableViewCell.swift; path = SnowReport/RunStatusTableViewCell.swift; sourceTree = "<group>"; };
+		B0BB75A72194EA80007C1EA0 /* Ontario Ski Report.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Ontario Ski Report.entitlements"; sourceTree = "<group>"; };
 		B0DC62B31FDF60B300584762 /* SnowfallHistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SnowfallHistoryTableViewCell.swift; path = SnowReport/SnowfallHistoryTableViewCell.swift; sourceTree = "<group>"; };
 		B0E33C141FCB699E005563CD /* HorseshoeTableViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = HorseshoeTableViewModel.swift; path = ViewModel/Implementations/Horseshoe/HorseshoeTableViewModel.swift; sourceTree = "<group>"; };
 		B0EA57A61F6B58DF00E2308A /* SnowConditionsTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SnowConditionsTableViewCell.swift; path = SnowReport/SnowConditionsTableViewCell.swift; sourceTree = "<group>"; };
@@ -645,6 +646,7 @@
 		B0F44FEE1DB15E22000A104E /* Ontario Ski Report */ = {
 			isa = PBXGroup;
 			children = (
+				B0BB75A72194EA80007C1EA0 /* Ontario Ski Report.entitlements */,
 				B02AB0901FF6D56800E96FB5 /* Extensions */,
 				B02C61A81F6EFF3B007E4C0E /* Entities */,
 				B00136B21F75D13A0032419D /* DataProviders */,
@@ -693,7 +695,6 @@
 				B00005F91FF6F533000E3CB0 /* Frameworks */,
 				B00005FA1FF6F533000E3CB0 /* Resources */,
 				10532A5412DAD1DAEEA5E19A /* [CP] Embed Pods Frameworks */,
-				2B650598D2C29BA027F004F4 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -712,7 +713,6 @@
 				B03B973B1FF5D182009C1FC7 /* Sources */,
 				B03B973C1FF5D182009C1FC7 /* Frameworks */,
 				B03B973D1FF5D182009C1FC7 /* Resources */,
-				EA5AA03B7515B0944A75241D /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -771,11 +771,16 @@
 					};
 					B0F44FEB1DB15E22000A104E = {
 						CreatedOnToolsVersion = 8.0;
-						DevelopmentTeam = L2L4Y9VEHG;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
+							com.apple.ApplePay = {
+								enabled = 0;
+							};
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 0;
+							};
+							com.apple.Keychain = {
 								enabled = 0;
 							};
 						};
@@ -879,21 +884,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		2B650598D2C29BA027F004F4 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ontario Ski Report For Apple Watch Extension/Pods-Ontario Ski Report For Apple Watch Extension-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		6640445733A4BB43AB21D867 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -937,14 +927,14 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Ontario Ski Report/Pods-Ontario Ski Report-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
 				"${BUILT_PRODUCTS_DIR}/JGActionSheet/JGActionSheet.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftSoup-iOS/SwiftSoup.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/JGActionSheet.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftSoup.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -952,21 +942,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Ontario Ski Report/Pods-Ontario Ski Report-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EA5AA03B7515B0944A75241D /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Today's Ski Report/Pods-Today's Ski Report-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 		F75D9F2A3687EE5F70A5433B /* [CP] Check Pods Manifest.lock */ = {
@@ -1162,7 +1137,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Ontario_Ski_Report_For_Apple_Watch_Extension;
 				INFOPLIST_FILE = "Ontario Ski Report For Apple Watch/Info.plist";
@@ -1185,7 +1160,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Ontario_Ski_Report_For_Apple_Watch_Extension;
 				INFOPLIST_FILE = "Ontario Ski Report For Apple Watch/Info.plist";
@@ -1208,7 +1183,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Ontario Ski Report For Apple Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../../Frameworks @executable_path/Frameworks";
@@ -1231,7 +1206,7 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Ontario Ski Report For Apple Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../../Frameworks @executable_path/Frameworks";
@@ -1254,7 +1229,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Today's Ski Report/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1276,7 +1251,7 @@
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Today's Ski Report/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
@@ -1403,12 +1378,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				INFOPLIST_FILE = "Ontario Ski Report/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blue-Mountain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ontario Ski Report/Blue Mountain-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -1424,12 +1401,14 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
-				DEVELOPMENT_TEAM = L2L4Y9VEHG;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 667D8S5SPP;
 				INFOPLIST_FILE = "Ontario Ski Report/Info.plist";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.Blue-Mountain";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Ontario Ski Report/Blue Mountain-Bridging-Header.h";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
 				SWIFT_VERSION = 4.0;

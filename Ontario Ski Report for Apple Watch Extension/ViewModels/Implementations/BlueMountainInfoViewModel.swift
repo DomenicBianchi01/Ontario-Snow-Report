@@ -37,7 +37,7 @@ final class BlueMountainInfoViewModel {
 
 extension BlueMountainInfoViewModel: CounterViewModelable {
     var counters: [Int] {
-        return [openTrailCount, openTerrainParkCount, Int(blueMountainReport?.snowReport.baseArea["SinceLiftsClosedCm"] ?? "") ?? 0]
+        return [openTrailCount, openTerrainParkCount, Int(blueMountainReport?.snowReport.baseArea["SinceLiftsClosedCm", default: ""] ?? "") ?? 0]
     }
 }
 

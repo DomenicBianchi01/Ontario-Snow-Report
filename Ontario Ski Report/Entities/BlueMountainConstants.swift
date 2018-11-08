@@ -21,7 +21,7 @@ enum BlueTrailDifficulty: String, Codable {
 
 struct BlueSnowReport: Codable {
     let baseConditions: String
-    let baseArea: [String : String]
+    let baseArea: [String : String?]
     
     enum CodingKeys: String, CodingKey {
         case baseConditions = "BaseConditions"

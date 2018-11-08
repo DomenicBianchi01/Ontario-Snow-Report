@@ -18,7 +18,7 @@ extension MountStLouisDataProvider: MountainInfoDataProvidable {
         mountainDetails = nil
         
         fetchHTML(from: "https://mountstlouis.com/open-runs-day/", completion: completion)
-        fetchHTML(from: "https://mountstlouis.com/open-parks/", appendToCurrentDetails: true, completion: completion)
+        //fetchHTML(from: "https://mountstlouis.com/open-parks/", appendToCurrentDetails: true, completion: completion)
         completion()
     }
     
@@ -34,11 +34,6 @@ extension MountStLouisDataProvider: MountainInfoDataProvidable {
             if appendToCurrentDetails {
                 try parsedReport?.append(html)
                 mountainDetails = try parsedReport?.getElementsByClass("availability_list table")
-
-                // The app currently does not use data for night operastions
-                if let newDetails = mountainDetails?.dropLast(2) {
-                    mountainDetails = Elements(Array(newDetails))
-                }
             } else {
                 parsedReport = try SwiftSoup.parse(html)
                 mountainDetails = try parsedReport?.getElementsByClass("availability_list table")

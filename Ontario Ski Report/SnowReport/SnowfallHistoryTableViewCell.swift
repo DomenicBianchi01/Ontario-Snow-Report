@@ -47,10 +47,10 @@ final class SnowfallHistoryTableViewCell: UITableViewCell {
             leftDivider.isHidden = false
             rightDivider.isHidden = false
             
-            overnightSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["SinceLiftsClosedCm"] ?? "") + "cm"
-            daySnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last24HoursCm"] ?? "") + "cm"
-            twoDaysSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last48HoursCm"] ?? "") + "cm"
-            weekSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last7DaysCm"] ?? "") + "cm"
+            overnightSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["SinceLiftsClosedCm", default: ""] ?? "") + "cm"
+            daySnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last24HoursCm", default: ""] ?? "") + "cm"
+            twoDaysSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last48HoursCm", default: ""] ?? "") + "cm"
+            weekSnowfallLabel.text = (blueMountainReport?.snowReport.baseArea["Last7DaysCm", default: ""] ?? "") + "cm"
         } else {
             dayLabel.text = "24hr"
             twoDaysLabel.text = "Base"
@@ -61,19 +61,35 @@ final class SnowfallHistoryTableViewCell: UITableViewCell {
             weekSnowfallLabel.isHidden = true
             leftDivider.isHidden = true
             rightDivider.isHidden = true
-            
+
             do {
+                var data: String? = nil
+                var data2: String? = nil
+                
                 if selectedMountain == .glenEden {
                     let conditions = try mountainDetails?.get(0).getElementsByTag("td")
-                    daySnowfallLabel.text = try conditions?.get(2).text() ?? "Unknown"
-                    twoDaysSnowfallLabel.text = try conditions?.get(1).text() ?? "Unknown"
+                    
+                    data = try conditions?.get(2).text()
+                    data2 = try conditions?.get(1).text()
                 } else {
-                    daySnowfallLabel.text = try (parsedReport?.getElementsByClass("data").last()?.text() ?? "-") + " cm"
-                    twoDaysSnowfallLabel.text = try parsedReport?.getElementsByTag("dd").get(2).text() ?? "-"
+                    data = try parsedReport?.getElementsByClass("data").last()?.text()
+                    data2 = try parsedReport?.getElementsByTag("dd").get(2).text()
+                }
+                
+                if let data = data, !data.isEmpty && Int(data) != nil {
+                    daySnowfallLabel.text = data + " cm"
+                } else {
+                    daySnowfallLabel.text = "N/A"
+                }
+                
+                if let data2 = data2, !data2.isEmpty && Int(data2) != nil {
+                    twoDaysSnowfallLabel.text = data2
+                } else {
+                    twoDaysSnowfallLabel.text = "N/A"
                 }
             } catch {
-                daySnowfallLabel.text = "Unknown"
-                twoDaysSnowfallLabel.text = "Unknown"
+                daySnowfallLabel.text = "N/A"
+                twoDaysSnowfallLabel.text = "N/A"
             }
         }
     }

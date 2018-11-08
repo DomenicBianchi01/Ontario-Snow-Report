@@ -24,7 +24,7 @@ final class MountStLouisRunInfoViewModel {
             let moonstoneTrailCount = moonstoneTrails?.count ?? 0
             if runNumber >= louisTrailCount + moonstoneTrailCount {
                 let runNumber = runNumber - louisTrailCount - moonstoneTrailCount
-                let sectionInfo = mountainDetails?.get(4+runNumber)
+                let sectionInfo = mountainDetails?.get(runNumber)
                 self.trailName = try sectionInfo?.select(".title").first()?.text()
                 self.trailStatus = try sectionInfo?.select(".status").first()?.text()
                 self.trailDifficulty = "terrain-park"
